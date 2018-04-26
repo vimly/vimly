@@ -1,3 +1,3 @@
-# Star\*ly
+# Vim\*ly
 
-A new way of learning big texts.
+Vimly: A New Way of Learning The Vim Manual Directly in Your Inbox
