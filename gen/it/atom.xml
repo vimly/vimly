@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>starly</title>
+    <link href="https://starly-info.github.io/gen/it/atom.xml" rel="self" />
+    <link href="https://starly-info.github.io" />
+    <id>https://starly-info.github.io/gen/it/atom.xml</id>
+    <author>
+        <name>Giacomo Mantani</name>
+        <email>name.surname at gmail</email>
+    </author>
+    <updated>Unknown</updated>
+    
+</feed>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>starly</title>
+        <link>https://starly-info.github.io</link>
+        <description><![CDATA[Learning Sessions Available]]></description>
+        <atom:link href="https://starly-info.github.io/gen/en/rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Fri, 18 Aug 2017 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Vim</title>
+    <link>https://starly-info.github.io/course/en/2017-08-18-vim.html</link>
+    <description><![CDATA[<p><img src="https://vim.sourceforge.io/images/vim_editor.gif" alt="image" /></p>
+<h1 id="vi-improveds-learning-session">Vi IMproved’s Learning Session</h1>
+<p><a href="http://www.vim.org/">VIM</a>’s help file is the main source of knowledge about VIM and his functionalities. This newsletter let you definitely learn this <strong>awesome text-editor</strong> throughout <em>daily</em> or <em>weekly</em> email. Each email has a theory section and a practice one. Even if you are an advance VIM user, I am sure you will find useful exercises, tips and you will improve your knowledge. <strong>Join us end enjoy your new way of learning!</strong></p>
+<p>Subscribers receive emails with:</p>
+<ul>
+<li><strong>Theory</strong>: a portion of the official manual (help file);</li>
+<li><strong>Practice</strong>: questions to enhance memorization and improve the learning process.</li>
+<li><strong>Help</strong>: answers to questions.</li>
+</ul>
+<p>See an <a href="/static/example.html">email preview</a>!</p>
+<p>What motivate me to create this service:</p>
+<ul>
+<li>avoid users from reinventing the wheel. Write plugins for functionalities already covered in the core software is time wasted;</li>
+<li>spread helpful knowledge to every user from beginner to advanced;</li>
+<li>support Vim;</li>
+<li>You definitely <strong>MUST</strong> try it! I know.</li>
+</ul>
+<h2 id="talks-presentations">Talks &amp; Presentations</h2>
+<ul>
+<li><a href="/slide/linux-day-2017.html">Linux Day (28 October 2017)</a></li>
+<li><a href="/slide/vimberlin.html">Vimberlin (23 November 2017)</a></li>
+</ul>
+<hr />
+<p>Do You…</p>
+<ul>
+<li><em>have any question?</em></li>
+<li><em>find typos?</em></li>
+<li><em>have ideas on how to improve the service?</em></li>
+<li><em>know some tricky questions that could be added to the practice section?</em></li>
+</ul>
+<p>I am really glad to receive <strong>your feedback</strong>.</p>
+<h2 id="subscribe">Subscribe</h2>]]></description>
+    <pubDate>Fri, 18 Aug 2017 00:00:00 UT</pubDate>
+    <guid>https://starly-info.github.io/course/en/2017-08-18-vim.html</guid>
+    <dc:creator>Giacomo Mantani</dc:creator>
+</item>
+
+    </channel>
+</rss>

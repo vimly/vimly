@@ -13,34 +13,15 @@
         end, you can not imagine how much you have learned.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        $if(cmctitle)$
-          <!-- Schema.org markup for Google+ -->
-          <meta itemprop="name" content="$cmctitle$">
-          <meta itemprop="description" content="$cmcDescription$">
-          <meta itemprop="image" content="$cmcImgTitle$">
-
-          <!-- Twitter Card data -->
-          <meta name="twitter:site" content="$cmcTwitter$">
-          <meta name="twitter:title" content="$cmcTitle$">
-          <meta name="twitter:description" content="$cmcDescription$">
-          <meta name="twitter:creator" content="$cmcTwitter$">
-          <meta name="twitter:image" content="$cmcImgTitle$">
-
-          <!-- Open Graph data -->
-          <meta property="og:title" content="$cmcTitle$" />
-          <meta property="og:type" content="product" />
-          <meta property="og:url" content="$host$" />
-          <meta property="og:image" content="$cmcImgTitle$" />
-          <meta property="og:description" content="$cmcDescription$" />
-        $endif$
+        
 
         <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="/static/css/turretcss.min.css" />
-        <link rel="stylesheet" type="text/css" href="/static/css/vimly-style.css" />
-        <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon16.ico"/>
+        <link rel="stylesheet" type="text/css" href="../../static/css/turretcss.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/vimly-style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="../../static/img/favicon16.ico" />
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
@@ -84,8 +65,8 @@
                   <h2 class="padding-top-s margin-bottom-xs" style="font-family:
                   'Press Start 2P', cursive;">Vim<sup>*</sup>ly</h2>
                   <ul>
-                    <li><i><a href="/index.html">Home</a></i></li>
-                    <li><i><a href="/course/$language$/2017-08-18-vim.html">Join!</a></i></li>
+                    <li><i><a href="../../index.html">Home</a></i></li>
+                    <li><i><a href="../../course/it/2017-08-18-vim.html">Join!</a></i></li>
                   </ul>
                 </nav>
             </header>
@@ -94,20 +75,33 @@
         <hr class="margin-top-xs margin-bottom-s">
 
         <div class="container">
-              $body$
+              <h3 class="text-center"><small>Feed disponibili sui corsi in italiano</small></h3>
+<p class="text-center">
+  <a href="./rss.xml" target="_blank">RSS</a> | <a href="./atom.xml" target="_blank">Atom</a>
+</p>
+<h3 class="text-center"><small>Feed disponibili sui corsi in inglese</small></h3>
+<p class="text-center">
+  <a href="../../gen/en/rss.xml" target="_blank">RSS</a> | <a href="../../gen/en/atom.xml" target="_blank">Atom</a>
+</p>
+<h3 class="text-center">Corsi disponibili</h3>
+<div class="background-white border-radius">
+
+</div>
+
+
         </div>
 
         <div class="container footer margin-top-m">
-          <p class="text-center font-size-xs color-grey-100">© Giacomo Mantani. Problems or questions? Contact&lt;%mymail&gt;</p>
+          <p class="text-center font-size-xs color-grey-100">© Giacomo Mantani. Problems or questions? Contact&lt;<a href="mailto:giacomo.mantani@gmail.com">giacomo.mantani@gmail.com</a>&gt;</p>
           <hr class="margin-bottom-xs no-margin-top">
             <footer class="text-right">
                 <nav class="nav-inline text-center no-padding-vertical">
                     <ul>
-                      <li><i><a href="/tos.html">terms of service</a></i></li>
+                      <li><i><a href="../../tos.html">terms of service</a></i></li>
                       ·
-                      <li><i><a href="/privacy.html">privacy</a></i></li>
+                      <li><i><a href="../../privacy.html">privacy</a></i></li>
                       ·
-                      <li><i><a href="/about.html">about</a></i></li>
+                      <li><i><a href="../../about.html">about</a></i></li>
                     </ul>
                 </nav>
             </footer>
