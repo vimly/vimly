@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+$for(posts)$
+    <url>
+      <loc>$host$$url$</loc>
+      $if(modified)$<lastmod>$modified$</lastmod>$endif$
+    </url>
+$endfor$
+    <url>
+      <loc>$host$/about.html</loc>
+    </url>
+    <url>
+      <loc>$host$/privacy.html</loc>
+    </url>
+    <url>
+      <loc>$host$/tos.html</loc>
+    </url>
+    <url>
+      <loc>$host$/gen/en/archive.xml</loc>
+    </url>
+    <url>
+      <loc>$host$/gen/en/rss.xml</loc>
+    </url>
+    <url>
+      <loc>$host$/gen/en/atom.xml</loc>
+    </url>
+</urlset>

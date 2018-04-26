@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Giacomo Mantani (@Vim_StarLy)">
+  <title>Vimly</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="https://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="league.css"/>
+  <link rel="stylesheet" href="https://lab.hakim.se/reveal-js/css/print/paper.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://lab.hakim.se/reveal-js/css/print/pdf.css' : 'https://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Vimly</h1>
+  <h1 class="subtitle">Easy-way to learn VIM and read its awesome manual</h1>
+  <h2 class="author">Giacomo Mantani (<span class="citation" data-cites="Vim_StarLy">@Vim_StarLy</span>)</h2>
+</section>
+
+<section><section id="about" class="titleslide slide level1"><h1>About</h1></section><section id="about-me" class="slide level2">
+<h1>About Me</h1>
+<ul>
+<li>25 years old italian boy</li>
+<li>Command-Line <strong>addicted</strong></li>
+<li>Computer Science and Engineering background</li>
+<li>Love: Learn, VIM and Haskell</li>
+</ul>
+<p>─────</p>
+<p>You can find this presentation at:</p>
+<p><a href="https://starly-info.github.io/slide/vimberlin.html" class="uri">https://starly-info.github.io/slide/vimberlin.html</a></p>
+</section><section id="about-starly" class="slide level2">
+<h1>About Vimly</h1>
+<h3 id="idea">Idea</h3>
+<blockquote>
+  <p>Deliver <em>weekly or daily</em> an excerpt from the official Vim Manual and some practice exercises.</p>
+</blockquote>
+<p>Theory + Practice = Course</p>
+<p>─────</p>
+<h3 id="motivation-i">Motivation I</h3>
+<ul>
+<li>Let even lazy people to <strong>RTFM</strong></li>
+<li>Help both <strong>beginners and advanced</strong> users to memorize (see <em><a href="https://jamesclear.com/deliberate-practice-theory">Deliberate Practice</a></em>)</li>
+</ul>
+</section><section id="motivation-ii" class="slide level2">
+<h1>Motivation II</h1>
+<p>In addition, reading an <em>official manual</em> let you:</p>
+<ul>
+<li><strong>Stop</strong> reinventing the wheel</li>
+<li><strong>Use</strong> <em>all</em> the power/features of whatever is explained</li>
+<li><strong>Save</strong> <em>time</em>, <em>money</em> and <em>fit of anger</em></li>
+</ul>
+<p>Remember:</p>
+<blockquote>
+<p>Scientia potentia est. 【Knowledge is power.】</p>
+</blockquote>
+</section><section id="how" class="slide level2">
+<h1>How</h1>
+<p>I would have liked something that is:</p>
+<ul>
+<li>Easy to develop</li>
+<li>Easy to deliver</li>
+<li>Easy to use/read</li>
+<li>Easy to maintain</li>
+</ul>
+<p><strong>Ideas???</strong></p>
+</section><section class="slide level2">
+
+<p><strong>EMAIL.</strong></p>
+</section><section id="advantages" class="slide level2">
+<h1>Advantages</h1>
+<ul>
+<li>You can read them <strong>anytime anywhere</strong></li>
+<li><strong>No login</strong> required</li>
+<li>I can use a <strong>static site</strong>; fast, secure and easy to deploy (<a href="https://jaspervdj.be/hakyll/">Hakyll ♡</a>)</li>
+</ul>
+</section><section id="disadvantage" class="slide level2">
+<h1>Disadvantage</h1>
+<ul>
+<li>I cannot sell your private data because it is not required (<em>I am proud of it</em>)</li>
+<li>There are not interactions between users</li>
+<li>I must deal with spam filters &amp; Co</li>
+<li>Mailchimp has a bit narrow customization (<em>A lot of manual email editing</em>)</li>
+</ul>
+</section></section>
+<section><section id="vimly" class="titleslide slide level1"><h1>Vimly</h1></section><section id="why-vim" class="slide level2">
+<h1>Why VIM</h1>
+<p>I have already mentioned my love for VIM, as many of you ;)</p>
+<p>In addition:</p>
+<ul>
+<li><strong>Too many plugins</strong> “reinvent the wheel”</li>
+<li>VIM power is <strong>too underestimate</strong>, editors grow like fungi</li>
+</ul>
+<p>And there is another problem:</p>
+<p><strong>Really few people read the manual entirely!</strong></p>
+</section><section id="life-cycle" class="slide level2">
+<h1>Life Cycle</h1>
+<ul>
+<li>Vimly idea pop up at the end of <em>July 2017</em></li>
+<li>Contacted <strong>Bram Moolenaar</strong> for authorization</li>
+<li>Bram endorsed the project</li>
+<li>Online at the end of <em>August 2017</em></li>
+<li>Improving… Helps welcome :)</li>
+</ul>
+</section><section id="state-of-art" class="slide level2">
+<h1>State of Art</h1>
+<p>There three different versions available. Each one can be daily or weekly.</p>
+<table style="width:65%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Basic</th>
+<th>Pro</th>
+<th>Full</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Knowledge</p></td>
+<td><p>Knowledge</p></td>
+<td><p>Knowledge Summarized</p></td>
+</tr>
+<tr class="even">
+<td><ul>
+<li></li>
+</ul></td>
+<td><p>Practice</p></td>
+<td><p>Practice</p></td>
+</tr>
+<tr class="odd">
+<td><ul>
+<li></li>
+</ul></td>
+<td><ul>
+<li></li>
+</ul></td>
+<td>CheatSheets</td>
+</tr>
+<tr class="even">
+<td><ul>
+<li></li>
+</ul></td>
+<td><ul>
+<li></li>
+</ul></td>
+<td>Assistance</td>
+</tr>
+<tr class="odd">
+<td><p><code>FREE</code></p></td>
+<td><p><code>49</code> Euro</p></td>
+<td><p><code>99</code> Euro</p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>All subscriptions grant you to <strong>lifetime access</strong> to the course.</li>
+<li>It is <strong>fully refundable</strong></li>
+<li><strong>50%</strong> of donations goes to <strong>ICCF Holland</strong>.</li>
+</ul>
+</section><section id="email-example" class="slide level2">
+<h1>Email Example</h1>
+<p>You can find an email preview (Pro version) <a href="https://starly-info.github.io/static/example.html">HERE</a>.</p>
+</section></section>
+<section><section id="get-in-touch" class="titleslide slide level1"><h1>Get in touch</h1></section><section id="where" class="slide level2">
+<h1>Where</h1>
+<p>I really enjoy spread knowledge, sharing information and being helpful.</p>
+<ul>
+<li><strong>Email</strong>: giacomo dot mantani at gmail</li>
+<li><strong>Facebook</strong>: <a href="https://www.facebook.com/Vimly-1485158088241414">fb.com/vimly</a></li>
+<li><strong>Twitter</strong>: <a href="https://twitter.com/Vim_StarLy">@Vim_StarLy</a></li>
+</ul>
+<p>New Ideas? Are you interested in another particular manual? <em>Padrino Book</em> ☻?</p>
+<p>Let me know, we could collaborate!</p>
+</section><section id="about-twitter" class="slide level2">
+<h1>About Twitter</h1>
+<ul>
+<li>Newborn account</li>
+<li><strong>VIM Tip each weekday</strong></li>
+</ul>
+<p>What do you like to receive as tweets?</p>
+</section><section id="final-thoughts" class="slide level2">
+<h1>Final Thoughts</h1>
+<p>Even an awesome practical course is not enough to learn VIM. Try to practice whenever it is possible and share VIM’s awesomeness with others.</p>
+<ul>
+<li><a href="https://github.com/vimperator/vimperator-labs">vimperator</a>/<a href="https://github.com/5digits/dactyl">pentadactyl</a>/<a href="https://github.com/cmcaine/tridactyl">tridactyl</a> (?)</li>
+<li>reply to Vimly questions ☻</li>
+<li>just use VIM, <em>period</em>.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="https://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

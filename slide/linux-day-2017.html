@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Giacomo Mantani">
+  <title>VIM mind Beginner’s Mind</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="https://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="league.css"/>
+  <link rel="stylesheet" href="https://lab.hakim.se/reveal-js/css/print/paper.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ?  'https://lab.hakim.se/reveal-js/css/print/pdf.css' : 'https://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">VIM mind Beginner’s Mind</h1>
+  <h2 class="author">Giacomo Mantani</h2>
+</section>
+
+<section><section id="about-us" class="titleslide slide level1"><h1>About Us</h1></section><section id="me" class="slide level2">
+<h1>Me</h1>
+<ul>
+<li>Ex-<strong>student</strong></li>
+<li>Command-Line <strong>addicted</strong></li>
+<li>Stand on the shoulders of giants</li>
+<li>CeSeNA Security <strong>Member</strong></li>
+</ul>
+</section><section id="cesena-security-team" class="slide level2">
+<h1>CeSeNA Security Team</h1>
+<ul>
+<li>we are <em>~10</em> <strong>active</strong> members</li>
+<li>we love <strong>learn</strong> and share experiences</li>
+<li>we <strong>meet</strong> twice a week (Thursday, Saturday)</li>
+<li>we <strong>partecipate</strong> to international competitions</li>
+</ul>
+</section><section id="disclaimer" class="slide level2">
+<h1>Disclaimer</h1>
+<p>This presentation was prepared by me (Giacomo Mantani) in his personal capacity. The opinions expressed are the author’s own and do not reflect the view of the CeSeNA Security Team.</p>
+</section></section>
+<section><section id="first-things-first" class="titleslide slide level1"><h1>First things first</h1></section><section id="what-is-vim" class="slide level2">
+<h1>What Is Vim?</h1>
+<p>We focus on <strong>Vim</strong>, not Vi.</p>
+<ul>
+<li>highly configurable <strong>text editor</strong> built to enable efficient text editing</li>
+<li>improved version of the Vi editor distributed with most UNIX systems</li>
+<li>useful for <strong>programming</strong>, many consider it an entire IDE (me too)</li>
+<li>born in 1991 (Amiga), 1992 (Unix)</li>
+</ul>
+</section><section id="what-vim-is-not" class="slide level2">
+<h1>What Vim Is Not?</h1>
+<ul>
+<li>Vim isn’t an editor designed to hold its users’ hands. It is a tool, the use of which <strong>must be learned</strong></li>
+<li>Vim isn’t a <strong>word processor</strong>. Although it can display text with various forms of highlighting and formatting, it isn’t there to provide WYSIWYG editing of typeset documents (It is great for editing TeX, though)</li>
+</ul>
+</section></section>
+<section><section id="first-steps" class="titleslide slide level1"><h1>First steps</h1></section><section id="open-a-file" class="slide level2">
+<h1>Open a File</h1>
+<pre><code>$ vim FILENAME</code></pre>
+<p>or</p>
+<pre><code>$ gvim FILENAME</code></pre>
+<pre class="raw"><code>+---------------------------------------+
+|#                                      |
+|~                                      |
+|~                                      |
+|~                                      |
+|~                                      |
+|&quot;file.txt&quot; [New file]                  |
++---------------------------------------+
+(&#39;#&quot; is the cursor position.)</code></pre>
+</section><section id="modes" class="slide level2">
+<h1>Modes</h1>
+<p>NORMAL (<code>&lt;Esc&gt;</code>)</p>
+<p>INSERT (<code>i</code>, <code>a</code>, <code>I</code>, <code>A</code>, <code>o</code>, <code>O</code>)</p>
+<p>VISUAL (<code>v</code>, <code>V</code>)</p>
+<p>REPLACE (<code>r</code>, <code>R</code>)</p>
+<p>Command-Line (<code>:</code>)</p>
+<blockquote>
+<p><em>The editor behaves differently, depending on which mode you are in.</em></p>
+</blockquote>
+</section><section id="move-around" class="slide level2">
+<h1>Move Around</h1>
+<p><u>Do not ever touch your mouse or arrow keys!</u></p>
+<p><code>hjkl</code></p>
+<p><code>gg</code></p>
+<p><code>G</code></p>
+<p><code>f</code></p>
+<p><code>F</code></p>
+<p><code>}</code></p>
+<p><code>{</code></p>
+</section><section id="move-around-1" class="slide level2">
+<h1>Move Around</h1>
+<figure>
+<img src="https://inside.github.io/vim-presentation/images/vim-move-shortcuts.png" alt="Movements Image" width="500" /><figcaption>Movements Image</figcaption>
+</figure>
+</section><section id="change-mode" class="slide level2">
+<h1>Change mode</h1>
+<p>In <strong>NORMAL</strong> mode we can <strong>switch to</strong>:</p>
+<table style="width:46%;">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>INSERT</th>
+<th>VISUAL</th>
+<th>REPLACE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>i</code>, <code>I</code></p></td>
+<td><p><code>v</code>, <code>V</code></p></td>
+<td><p><code>r</code>, <code>R</code></p></td>
+</tr>
+<tr class="even">
+<td><p><code>a</code>, <code>A</code></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p><code>o</code>, <code>O</code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Plus:</p>
+<ul>
+<li>Command-Line (<code>:</code>)</li>
+<li>Back to NORMAL (<code>&lt;Esc&gt;</code>)</li>
+</ul>
+</section><section id="close-a-file" class="slide level2">
+<h1>Close A File</h1>
+<h3 id="command-line-mode">Command-Line Mode</h3>
+<table style="width:50%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cmd</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>:q</code></p></td>
+<td><p>quit without save</p></td>
+</tr>
+<tr class="even">
+<td><p><code>:wq</code> or <code>:x</code></p></td>
+<td><p>write and quit</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="normal-mode">Normal Mode</h3>
+<table style="width:50%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 27%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><code>ZZ</code></p></td>
+<td><p>write and quit</p></td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="awesomeness" class="titleslide slide level1" data-background="https://media1.tenor.com/images/2ef8909c84a9bb40d4e311a2b87848ec/tenor.gif"><h1>Awesomeness!</h1></section><section id="move-quickly" class="slide level2">
+<h1>Move Quickly</h1>
+<table style="width:69%;">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cmd</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>gi</code></p></td>
+<td><p>Goto last inserted text</p></td>
+</tr>
+<tr class="even">
+<td><p><code>g;</code></p></td>
+<td><p>Goto older position in change list</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>gf</code></p></td>
+<td><p>Edit the file under or after the cursor</p></td>
+</tr>
+<tr class="even">
+<td><p><code>gd</code></p></td>
+<td><p>Goto definition of word under the cursor</p></td>
+</tr>
+</tbody>
+</table>
+</section><section id="magic" class="slide level2">
+<h1>Magic</h1>
+<ol type="1">
+<li><code>:TOHtml</code></li>
+<li>gzip autocmd</li>
+</ol>
+<pre><code>$ vim phrack49.tar.gz # ;)</code></pre>
+<pre class="raw"><code>Demo.</code></pre>
+</section><section id="encryption" class="slide level2">
+<h1>Encryption</h1>
+<pre><code>:set noundofile viminfo=
+:noswapfile edit secrets.txt</code></pre>
+<ul>
+<li>Use <code>:X</code> instead <code>:x</code>. It prompts a password for write the current file encrypted.</li>
+<li><code>key</code> option will be set with <code>:X</code>. Never set it manually, it will be into viminfo*!</li>
+<li><code>cryptmethod</code> option. <code>blowfish2</code> is the best choice.</li>
+</ul>
+<p>* The viminfo file is designed to store status information.</p>
+</section><section id="better-encryption" class="slide level2">
+<h1>Better Encryption</h1>
+<p><a href="https://www.vim.org/scripts/script.php?script_id=3645">GnuPG Plugin</a></p>
+<p>GnuPG, free implementation of the OpenPGP, allow you to encrypt and sign your data.</p>
+<blockquote>
+<p>Arguing that you don’t care about the right to privacy because you have nothing to hide is no different from saying you don’t care about free speech because you have nothing to say. - Edward Snowden</p>
+</blockquote>
+</section><section id="rot13" class="slide level2">
+<h1>Rot13</h1>
+<p><code>g??</code></p>
+<h3 id="before">Before</h3>
+<blockquote>
+<p>Rot13 on the fly!</p>
+</blockquote>
+<h3 id="after">After</h3>
+<blockquote>
+<p>Ebg13 ba gur syl!</p>
+</blockquote>
+</section><section id="customize" class="slide level2">
+<h1>Customize</h1>
+<p>.vimrc</p>
+<p><a href="https://github.com/jak3/personal_stuff/blob/master/vimrc">jak3’s vimrc</a></p>
+</section></section>
+<section><section id="developement" class="titleslide slide level1"><h1>Developement</h1></section><section id="completation" class="slide level2">
+<h1>Completation</h1>
+<p><code>CTRL-P</code> (previous) <code>CTRL-N</code> (next) match.</p>
+<ul>
+<li>Whole lines (<code>CTRL-X CTRL-L</code>)</li>
+<li>keywords in the current file (<code>CTRL-X CTRL-N</code>)</li>
+<li>keywords in ‘<code>dictionary</code>’ option (<code>CTRL-X CTRL-K</code>)</li>
+<li>keywords in ‘<code>thesaurus</code>’ option (<code>CTRL-X CTRL-T</code>)</li>
+<li>keywords in the current and included files (<code>CTRL-X CTRL-I</code>)</li>
+<li>tags (<code>CTRL-X CTRL-]</code>)</li>
+<li>file names (<code>CTRL-X CTRL-F</code>)</li>
+<li>definitions or macros (<code>CTRL-X CTRL-D</code>)</li>
+<li>Vim command-line (<code>CTRL-X CTRL-V</code>)</li>
+<li>User defined completion (<code>CTRL-X CTRL-U</code>)</li>
+<li><strong>omni</strong> completion (<code>CTRL-X CTRL-O</code>)</li>
+<li>Spelling suggestions (<code>CTRL-X s</code> )</li>
+<li>keywords in ‘<code>complete</code>’ option (<code>CTRL-N</code> )</li>
+</ul>
+</section><section id="completion" class="slide level2">
+<h1>Completion</h1>
+<p>Do you prefer using <code>&lt;Tab&gt;</code>?</p>
+<pre><code>function! CleverTab()
+   if strpart( getline(&#39;.&#39;), 0, col(&#39;.&#39;)-1 ) =~ &#39;^\s*$&#39;
+      return &quot;\&lt;Tab&gt;&quot;
+   else
+      return &quot;\&lt;C-N&gt;&quot;
+   endif
+endfunction
+inoremap &lt;Tab&gt; &lt;C-R&gt;=CleverTab()&lt;CR&gt;</code></pre>
+</section><section id="syntax-highlighted" class="slide level2">
+<h1>Syntax Highlighted</h1>
+<p><code>:syntax enable</code></p>
+<p><code>:set background=dark</code> or <code>:set background=light</code></p>
+<p><code>:colorscheme solarized</code></p>
+<p><code>:syntax clear</code></p>
+<p><code>:syntax off</code></p>
+<p>It is also possible to write your own syntax highlighted.</p>
+</section><section id="documentation" class="slide level2">
+<h1>Documentation</h1>
+<p><code>K</code> run a program to lookup the keyword under the cursor. The name of the program is given with the ‘<strong>keywordprg</strong>’ option (default is “man”).</p>
+<pre class="raw"><code>Demo.</code></pre>
+</section><section id="sessions" class="slide level2">
+<h1>Sessions</h1>
+<p>Contains information about the file list, window layout, global variables, options and more. Exactly what is remembered is controlled by the ‘<strong>sessionoptions</strong>’ option.</p>
+<table style="width:60%;">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cmd</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>:mksession project-euler.vim</code></p></td>
+<td><p>Create</p></td>
+</tr>
+<tr class="even">
+<td><p><code>:source vimbook.vim</code></p></td>
+<td><p>Load</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>vim -S vimbook.vim</code></p></td>
+<td><p>Restore</p></td>
+</tr>
+</tbody>
+</table>
+</section><section id="tags" class="slide level2">
+<h1>Tags</h1>
+<p>A <strong>tag</strong> is a location where an identifier is defined. Vim let
+you to directly jump from any place to the tag. Create them with <a href="https://ctags.sourceforge.net/">Exuberant CTAGS</a> or <a href="https://github.com/universal-ctags/ctags">Universal CTAGS</a>.</p>
+<table style="width:75%;">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cmd</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>:tag startlist</code></p></td>
+<td><p>Goto startlist definition</p></td>
+</tr>
+<tr class="even">
+<td><p><code>CTRL-]</code></p></td>
+<td><p>Goto definition under the cursor</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>CTRL-t</code></p></td>
+<td><p>Jump back</p></td>
+</tr>
+<tr class="even">
+<td><p><code>:tags</code></p></td>
+<td><p>Show traversed tags</p></td>
+</tr>
+</tbody>
+</table>
+</section><section id="compile" class="slide level2">
+<h1>Compile</h1>
+<p>Vim has a set of so called “quickfix” commands. They enable you to compile a program from within Vim and then go through the errors generated and fix them (hopefully).</p>
+<p><code>:make {arguments}</code></p>
+<p>If errors were generated, they are captured and the editor positions you where the first error occurred.</p>
+<p><code>:set makeprg=gcc\ -Wall\ -ggdb3\ -o\ %&lt;\ %</code></p>
+</section><section id="directory-tree" class="slide level2">
+<h1>Directory Tree</h1>
+<h3 id="netrw">Netrw</h3>
+<p>Netrw makes reading files, writing files, browsing over a network or locally easy!</p>
+<p><code>vim scp://hostname/path/to/file</code></p>
+<p><code>vim ftp://hostname/path/to/file</code></p>
+<p><code>vim /local/path/</code></p>
+</section><section id="plugins" class="slide level2">
+<h1>Plugins</h1>
+<ul>
+<li>Completion</li>
+<li>Highlighting</li>
+<li>Snippets/Templates</li>
+<li>Tags</li>
+<li>Statusline</li>
+</ul>
+</section></section>
+<section><section id="vimly" class="titleslide slide level1"><h1>Vimly</h1></section><section id="newsletter" class="slide level2">
+<h1>Newsletter</h1>
+<h3 id="starly.info"><a href="https://starly-info.github.io/course/en/2017-08-18-vim.html">starly.info</a></h3>
+</section><section id="helpdesk" class="slide level2">
+<h1>HelpDesk</h1>
+<p>I really enjoy spread knowledge and being helpful and I love to talk with smart people about everything.</p>
+<ul>
+<li>Email: name dot surname at gmail or studio.unibo.it</li>
+<li>Facebook: <a href="https://www.facebook.com/Vimly-1485158088241414">Page</a></li>
+</ul>
+</section><section id="keep-practice" class="slide level2">
+<h1>Keep Practice</h1>
+<p>Try to practice whenever it is possible!</p>
+<ul>
+<li>vimperator/pentadactyl/vimium</li>
+<li>use always Vim keybindings when available</li>
+<li>reply to Vimly questions <code>;)</code></li>
+<li>just use VIM</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="https://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

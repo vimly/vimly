@@ -1,0 +1,3 @@
+h1,h2,h3{text-shadow: 2px 2px #00df00;}
+a{color:#008f00;}
+a:focus,a:hover{color:#00df00;text-decoration:none;}

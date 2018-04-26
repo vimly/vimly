@@ -1,0 +1,242 @@
+<h3>Email Preview</h3>
+<!--Start Email Preview-->
+<div style="background:#fff" class="container">
+<div class="margin-m">
+<h2 class="text-center padding-top-s" style="font-family:lora,georgia,times new roman,serif">Knowledge Pill</h2>
+<h3 class="null" style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">07.4&nbsp; Backup files</span></h3>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Usually Vim does not produce a backup file. If you want to have one, all you need to do is execute the following command:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>:set backup</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">The name of the backup file is the original file with a&nbsp; ~&nbsp; added to the end. If your file is named data.txt, for example, the backup file name is data.txt~.<br />
+<br />
+If you do not like the fact that the backup files end with ~, you can change the extension:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>:set backupext=.bak</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">This will use data.txt.bak instead of data.txt~.<br />
+<br />
+Another option that matters here is &#39;backupdir&#39;. It specifies where the backup file is written. The default, to write the backup in the same directory as the original file, will mostly be the right thing.<br />
+<br />
+<strong>Note:</strong> <em>When the &#39;backup&#39; option isn&#39;t set but the &#39;writebackup&#39; is, Vim will still create a backup file. However, it is deleted as soon as writing the file was completed successfully. This functions as a safety against losing your original file when writing fails in some way (disk full is the most common cause; being hit by lightning might be another, although less common).</em><br />
+<br />
+<strong>KEEPING THE ORIGINAL FILE</strong><br />
+<br />
+If you are editing source files, you might want to keep the file before you make any changes. But the backup file will be overwritten each time you write the file. Thus it only contains the previous version, not the first one.<br />
+<br />
+To make Vim keep the original file, set the &#39;patchmode&#39; option. This specifies the extension used for the first backup of a changed file. Usually you would do this:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>:set patchmode=.orig</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">When you now edit the file data.txt for the first time, make changes and write the file, Vim will keep a copy of the unchanged file under the name &quot;data.txt.orig&quot;.<br />
+<br />
+If you make further changes to the file, Vim will notice that &quot;data.txt.orig&quot; already exists and leave it alone. Further backup files will then be called &quot;data.txt~&quot; (or whatever you specified with &#39;backupext&#39;).<br />
+<br />
+If you leave &#39;patchmode&#39; empty (that is the default), the original file will not be kept.</span><br />
+&nbsp;</div>
+
+<h3 class="null" style="text-align: justify;"><span style="font-family:lora,georgia,times new roman,serif">07.5&nbsp; Copy text between files</span></h3>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">This explains how to copy text from one file to another. Let&#39;s start with a simple example. Edit the file that contains the text you want to copy. Move the cursor to the start of the text and press &quot;<strong>v</strong>&quot;. This starts Visual mode. Now move the cursor to the end of the text and press &quot;<strong>y</strong>&quot;. This yanks (copies) the selected text.<br />
+<br />
+Move the cursor to the character where you want the text to appear after. Use &quot;<strong>p</strong>&quot; to put the text there.<br />
+<br />
+Of course you can use many other commands to yank the text. For example, to select whole lines start Visual mode with &quot;<strong>V</strong>&quot;. Or use CTRL-V to select a rectangular block. Or use &quot;<strong>Y</strong>&quot; to yank a single line, &quot;<strong>yaw</strong>&quot; to yank-a-word, etc.<br />
+<br />
+The &quot;<strong>p</strong>&quot; command puts the text after the cursor. Use &quot;<strong>P</strong>&quot; to put the text before the cursor.<br />
+<br />
+Notice that Vim remembers if you yanked a whole line or a block, and puts it back that way.<br />
+<br />
+<strong>USING REGISTERS</strong><br />
+<br />
+When you want to copy several pieces of text from one file to another, having to switch between the files and writing the target file takes a lot of time. To avoid this, copy each piece of text to its own register.<br />
+<br />
+A register is a place where Vim stores text. Here we will use the registers named a to z (later you will find out there are others). Let&#39;s copy a sentence to the f register (f for First):</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>&quot;fyas</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">The &quot;<strong>yas</strong>&quot; command yanks a sentence like before. It&#39;s the <strong>&quot;f </strong>that tells Vim the text should be place in the f register. This must come just before the yank command.<br />
+<br />
+Now yank three whole lines to the l register (l for line):</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>&quot;l3Y</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">The count could be before the <strong>&quot;l</strong> just as well. To yank a block of text to the b (for block) register:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>CTRL-Vjjww&quot;by</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Notice that the register specification <strong>&quot;b</strong> is just before the &quot;<strong>y</strong>&quot; command. This is required. If you would have put it before the &quot;<strong>w</strong>&quot; command, it would not have worked.<br />
+<br />
+Now you have three pieces of text in the f, l and b registers. Edit another file, move around and place the text where you want it:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>&quot;fp</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Again, the register specification &quot;f comes before the &quot;<strong>p</strong>&quot; command.<br />
+<br />
+You can put the registers in any order. And the text stays in the register until you yank something else into it. Thus you can put it as many times as you like.<br />
+<br />
+When you delete text, you can also specify a register. Use this to move several pieces of text around. For example, to delete-a-word and write it in the w register:</span></div>
+
+<div style="text-align: center;"><br />
+<span style="font-family:lora,georgia,times new roman,serif"><em>&quot;wdaw</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Again, the register specification comes before the delete command &quot;<strong>d</strong>&quot;.<br />
+<br />
+<strong>APPENDING TO A FILE</strong><br />
+<br />
+When collecting lines of text into one file, you can use this command:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>:write &gt;&gt; logfile</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">This will write the text of the current file to the end of &quot;logfile&quot;. Thus it is appended. This avoids that you have to copy the lines, edit the log file and put them there. Thus you save two steps. But you can only append to the end of a file.<br />
+<br />
+To append only a few lines, select them in Visual mode before typing &quot;<strong>:write</strong>&quot;. In chapter 10 you will learn other ways to select a range of lines.</span></div>
+
+<h3 class="null" style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">07.6&nbsp; Viewing a file</span></h3>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Sometimes you only want to see what a file contains, without the intention to ever write it back. There is the risk that you type &quot;<strong>:w</strong>&quot; without thinking and overwrite the original file anyway. To avoid this, edit the file read-only.<br />
+<br />
+To start Vim in readonly mode, use this command:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>vim -R file</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">On Unix this command should do the same thing:</span></div>
+
+<div style="text-align: center;"><br />
+<span style="font-family:lora,georgia,times new roman,serif"><em>view file</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">You are now editing &quot;file&quot; in read-only mode. When you try using &quot;<strong>:w</strong>&quot; you will get an error message and the file won&#39;t be written.<br />
+<br />
+When you try to make a change to the file Vim will give you a warning:</span></div>
+
+<div style="text-align: center;"><br />
+<span style="font-family:lora,georgia,times new roman,serif"><em>W10: Warning: Changing a readonly file</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">The change will be done though. This allows for formatting the file, for example, to be able to read it easily.<br />
+<br />
+If you make changes to a file and forgot that it was read-only, you can still write it. Add the <strong>!</strong> to the write command to force writing.<br />
+<br />
+If you really want to forbid making changes in a file, do this:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>vim -M file</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Now every attempt to change the text will fail. The help files are like this, for example. If you try to make a change you get this error message:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>E21: Cannot make changes, &#39;modifiable&#39; is off</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">You could use the -M argument to setup Vim to work in a viewer mode. This is only voluntary though, since these commands will remove the protection:</span></div>
+
+<div style="text-align: center;"><br />
+<span style="font-family:lora,georgia,times new roman,serif"><em>:set modifiable<br />
+:set write</em></span></div>
+
+<div style="text-align: justify;">&nbsp;</div>
+
+<h3 class="null" style="text-align: justify;"><span style="font-family:lora,georgia,times new roman,serif">07.7&nbsp; Changing the file name</span></h3>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">A clever way to start editing a new file is by using an existing file that contains most of what you need. For example, you start writing a new program to move a file. You know that you already have a program that copies a file, thus you start with:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>:edit copy.c</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">You can delete the stuff you don&#39;t need. Now you need to save the file under a new name. The &quot;<strong>:saveas&quot;</strong> command can be used for this:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>:saveas move.c</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Vim will write the file under the given name, and edit that file. Thus the next time you do &quot;<strong>:write</strong>&quot;, it will write &quot;move.c&quot;. &quot;copy.c&quot; remains unmodified.<br />
+<br />
+When you want to change the name of the file you are editing, but don&#39;t want to write the file, you can use this command:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>:file move.c</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">Vim will mark the file as &quot;not edited&quot;. This means that Vim knows this is not the file you started editing. When you try to write the file, you might get this message:</span><br />
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><em>E13: File exists (use ! to override)</em></span></div>
+
+<div style="text-align: justify;"><br />
+<span style="font-family:lora,georgia,times new roman,serif">This protects you from accidentally overwriting another file.</span><br />
+&nbsp;</div>
+
+<h3 class="null"><span style="font-family:lora,georgia,times new roman,serif">Questions</span></h3>
+
+<ol>
+  <li><span style="font-family:lora,georgia,times new roman,serif">Is backup files alternatives to swap files?</span><br />
+  &nbsp;</li>
+  <li style="text-align: left;"><span style="font-family:lora,georgia,times new roman,serif">Write the truth table for the combinations of options &#39;backup&#39; and </span><span style="font-family:lora,georgia,times new roman,serif">&#39;writebackup&#39;. </span><br />
+  <span style="font-family:lora,georgia,times new roman,serif">Fill the action statement (<em>XXXX</em>):</span><br />
+  <br />
+  <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><em>&#39;backup&#39; &#39;writebackup&#39;&nbsp; action</em></span><br />
+  <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><em>off&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; off&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; XXXX</em></span><br />
+  <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><em>off&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; XXXX</em></span><br />
+  <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><em>on&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; off&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; XXXX</em></span><br />
+  <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><em>on&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on</em></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XXXX<br />
+  &nbsp;</li>
+  <li style="text-align: justify;"><span style="font-family:lora,georgia,times new roman,serif">Can you make changes to files open in viewer mode (-M) if really needed?</span><br />
+  &nbsp;</li>
+  <li style="text-align: justify;"><span style="font-family:lora,georgia,times new roman,serif">When you change the name of the current file, with the command<strong> :file</strong></span><strong> </strong><span style="font-family:lora,georgia,times new roman,serif"><strong>NEWNAME</strong>, does VIM delete the old one?</span></li>
+</ol>
+<span style="font-family:lora,georgia,times new roman,serif">Have Fun :)</span><br />
+<div style="text-align: center;"><span style="font-family:lora,georgia,times new roman,serif"><strong>***</strong></span><br />
+</div>
+
+<h3 class="null"><span style="font-family:lora,georgia,times new roman,serif"><strong><em>Answers (*SPOILER*)</em></strong></span></h3>
+
+<ol>
+  <li style="text-align: justify;"><span style="font-family:lora,georgia,times new roman,serif">No, even with or without backup files, swap files still exist and let you recover contents of files from crash using the command <strong>:recover</strong>.</span><br />
+  &nbsp;</li>
+  <li><br />
+  <span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace"><em>&#39;backup&#39; &#39;writebackup&#39;&nbsp; action<br />
+  off&nbsp;&nbsp;&nbsp; off&nbsp;&nbsp;&nbsp; <strong>no backup made</strong><br />
+  <br />
+  off&nbsp;&nbsp;&nbsp; on&nbsp;&nbsp;&nbsp; <strong>backup current file, deleted afterwards (default)</strong><br />
+  <br />
+  on&nbsp;&nbsp;&nbsp; off&nbsp;&nbsp;&nbsp; <strong>delete old backup, backup current file</strong><br />
+  <br />
+  on&nbsp;&nbsp;&nbsp; on&nbsp;&nbsp;&nbsp; <strong>delete old backup, backup current file</strong></em></span><br />
+  &nbsp;</li>
+  <li style="text-align: justify;"><span style="font-family:lora,georgia,times new roman,serif">Yes, you can. Change deliberatly the options &#39;<em>modifiable</em>&#39; and &#39;<em>write</em>&#39;.</span><br />
+  &nbsp;</li>
+  <li style="text-align: justify;"><span style="font-family:lora,georgia,times new roman,serif">No, the old file still exist after write and exit.</span></li>
+</ol>
+<br />
+</div>
+</div>
+<!--End Email Preview-->
