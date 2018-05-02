@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>starly</title>
-    <link href="https://starly-info.github.io/gen/en/atom.xml" rel="self" />
-    <link href="https://starly-info.github.io" />
-    <id>https://starly-info.github.io/gen/en/atom.xml</id>
+    <title>Vimly</title>
+    <link href="http://vimly.info/gen/en/atom.xml" rel="self" />
+    <link href="http://vimly.info" />
+    <id>http://vimly.info/gen/en/atom.xml</id>
     <author>
         <name>Giacomo Mantani</name>
-        <email>name.surname at gmail</email>
+        <email>vimly.info@gmail.com</email>
     </author>
     <updated>2017-08-18T00:00:00Z</updated>
     <entry>
     <title>Vim</title>
-    <link href="https://starly-info.github.io/course/en/2017-08-18-vim.html" />
-    <id>https://starly-info.github.io/course/en/2017-08-18-vim.html</id>
+    <link href="http://vimly.info/course/en/2017-08-18-vim.html" />
+    <id>http://vimly.info/course/en/2017-08-18-vim.html</id>
     <published>2017-08-18T00:00:00Z</published>
     <updated>2017-08-18T00:00:00Z</updated>
     <summary type="html"><![CDATA[<p><img src="https://vim.sourceforge.io/images/vim_editor.gif" alt="image" /></p>

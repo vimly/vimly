@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>starly</title>
-        <link>https://starly-info.github.io</link>
+        <title>Vimly</title>
+        <link>http://vimly.info</link>
         <description><![CDATA[Learning Sessions Available]]></description>
-        <atom:link href="https://starly-info.github.io/gen/it/rss.xml" rel="self"
+        <atom:link href="http://vimly.info/gen/it/rss.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Unknown</lastBuildDate>
         

@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
     <url>
-      <loc>https://starly-info.github.io/course/en/2017-08-18-vim.html</loc>
-      <lastmod>26 Apr 2018</lastmod>
+      <loc>http://vimly.info/course/en/2017-08-18-vim.html</loc>
+      <lastmod>30 Apr 2018</lastmod>
     </url>
 
     <url>
-      <loc>https://starly-info.github.io/about.html</loc>
+      <loc>http://vimly.info/about.html</loc>
     </url>
     <url>
-      <loc>https://starly-info.github.io/privacy.html</loc>
+      <loc>http://vimly.info/privacy.html</loc>
     </url>
     <url>
-      <loc>https://starly-info.github.io/tos.html</loc>
+      <loc>http://vimly.info/tos.html</loc>
     </url>
     <url>
-      <loc>https://starly-info.github.io/gen/en/archive.xml</loc>
+      <loc>http://vimly.info/gen/en/archive.xml</loc>
     </url>
     <url>
-      <loc>https://starly-info.github.io/gen/en/rss.xml</loc>
+      <loc>http://vimly.info/gen/en/rss.xml</loc>
     </url>
     <url>
-      <loc>https://starly-info.github.io/gen/en/atom.xml</loc>
+      <loc>http://vimly.info/gen/en/atom.xml</loc>
     </url>
 </urlset>
