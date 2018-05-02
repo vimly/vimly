@@ -3,7 +3,7 @@ module Config where
 import Multilang
 import Hakyll (FeedConfiguration(..), constField)
 
-rootHost = "https://starly-info.github.io"
+rootHost = "http://vimly.info"
 
 data CourseMetasConfiguration = CourseMetasConfiguration
   { -- | Title
@@ -27,17 +27,17 @@ freeVersion = [
 
 feedConfig :: Language -> FeedConfiguration
 feedConfig _ = FeedConfiguration
-  { feedTitle       = "starly"
+  { feedTitle       = "Vimly"
   , feedDescription = "Learning Sessions Available"
   , feedAuthorName  = "Giacomo Mantani"
-  , feedAuthorEmail = "name.surname at gmail"
-  , feedRoot        = "https://starly-info.github.io"
+  , feedAuthorEmail = "vimly.info@gmail.com"
+  , feedRoot        = "http://vimly.info"
   }
 
 vimlyConfig :: CourseMetasConfiguration
 vimlyConfig = CourseMetasConfiguration
   { cmcTitle        = "VimLy"
-  , cmcImgCover     = "https://starly-info.github.io/static/img/fb-cover.png"
-  , cmcDescription  = "Vim Knowledge and Practice in Your Inbox.. Daily or Weekly!"
+  , cmcImgCover     = "https://vimly.github.io/static/img/fb-cover.png"
+  , cmcDescription  = "Vimly: A New Way of Learning The Vim Manual Directly in Your Inbox"
   , cmcTwitter      = "@Vim_StarLy"
   }
