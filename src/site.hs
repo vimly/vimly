@@ -26,6 +26,10 @@ main = hakyll $ do
         route   idRoute
         compile $ compressCssCompiler >>= relativizeUrls
 
+    match "static/js/*" $ do
+        route   idRoute
+        compile $ compressJsCompiler >>= relativizeUrls
+
     create ["sitemap.xml"] sitemapBehavior
 
     match "templates/*"         $ compile templateCompiler
