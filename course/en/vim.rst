@@ -1,5 +1,6 @@
 ---
 title: Vim
+published: 2017-08-18
 ---
 
 .. image:: https://vim.sourceforge.io/images/vim_editor.gif
