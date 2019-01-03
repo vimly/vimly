@@ -1,136 +1,67 @@
 $body$
 
-<script src="/static/js/checkout.js"></script>
-<script>
-  var pbutton = {
-    // Configure environment
-    env: 'sandbox',
-    client: {
-      sandbox: 'demo_sandbox_client_id',
-      production: 'demo_production_client_id'
-    },
-    // Customize button (optional)
-    locale: 'en_US',
-    style: {
-      size: 'small',
-      color: 'gold',
-      shape: 'pill',
-    },
-
-    // Enable Pay Now checkout flow (optional)
-    commit: true,
-
-    // Set up a payment
-    payment: function(data, actions) {
-      return actions.payment.create({
-        transactions: [{
-          amount: {
-            total: '0.00',
-            currency: 'USD'
-          }
-        }]
-      });
-    },
-    // Execute the payment
-    onAuthorize: function(data, actions) {
-      return actions.payment.execute().then(function() {
-        // Show a confirmation message to the buyer
-        window.location.href = 'https://vimly.github.io/subscribe-pro.html';
-      });
-    }
-  };
-
-  paypal.Button.render(pbutton.payment.transactions.amount.total = '5.00' , '#pbutton-professional');
-  paypal.Button.render({
-    // Configure environment
-    env: 'sandbox',
-    client: {
-      sandbox: 'ARlBpLkCdt1xh_yMF7WOtrpRgPxgnvJMuV_HGhFM4n4gkQ1LRmEEabZt_kh9DCRVtbIMk_X37odr7zvv'
-    },
-    // Customize button (optional)
-    locale: 'en_US',
-    style: {
-      size: 'small',
-      color: 'gold',
-      shape: 'pill',
-    },
-
-    // Enable Pay Now checkout flow (optional)
-    commit: true,
-
-    // Set up a payment
-    payment: function(data, actions) {
-      return actions.payment.create({
-        transactions: [{
-          amount: {
-            total: '9.00',
-            currency: 'USD'
-          }
-        }]
-      });
-    },
-    // Execute the payment
-    onAuthorize: function(data, actions) {
-      return actions.payment.execute().then(function() {
-        // Show a confirmation message to the buyer
-        window.location.href = 'https://vimly.github.io/subscribe-pro.html';
-      });
-    }
-  }, '#pbutton-full');
-
-</script>
-
 <div class="table-responsive">
-  <table class="text-center" style="border:none;">
-    <thead>
-      <tr>
-        <th scope="col" class="font-size-xl text-center color-success border-bottom border-color-success">Basic</th>
-        <th scope="col" class="font-size-xl text-center color-info border-bottom
-        border-color-info">Professional</th>
-        <th scope="col" class="font-size-xl text-center color-secondary border-bottom border-color-secondary">Full</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="font-style:italic">
-        <td>All Vim Manual Chunks</td>
-        <td>All Vim Manual Chunks</td>
-        <td>All Vim Manual Chunks Summarized (Read only what matter most!) &amp; CheatSheets</td>
-      </tr>
-      <tr style="font-style:italic">
-        <td>-</td>
-        <td>Practice Exercises</td>
-        <td>Practice Exercises</td>
-      </tr>
-      <tr style="font-style:italic">
-        <td>-</td>
-        <td>-</td>
-        <td>Personal configurations help desk</td>
-      </tr>
-      <tr>
-        <td>
-          <form action="/subscribe-free.html" method="get" accept-charset="utf-8">
-            <button class="button success button-border button-pill button-xs">FREE</button>
-          </form>
-        </td>
-        <td>
-          <big class="color-info">5 &euro;</big>
-          <form action="/subscribe-pro.html" method="get" accept-charset="utf-8">
-            <div id="pbutton-professional"></div>
-          </form>
-          <p></p>
-          <em class="padding-top font-size-xs">*This fee is <b>fully refundable</b> for three days following
-            signup.</em>
-        </td>
-        <td>
-          <big class="color-secondary">9 &euro;</big>
-            <div id="pbutton-full"></div>
-          <p></p>
-          <em class="padding-top font-size-xs">*This fee is <b>fully refundable</b> for three days following
-            signup.</em>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+	<table class="text-center" style="border:none;">
+		<thead>
+			<tr>
+				<th scope="col" class="font-size-xl text-center color-success border-bottom border-color-success">Basic</th>
+				<th scope="col" class="font-size-xl text-center color-info border-bottom
+				border-color-info">Professional</th>
+				<th scope="col" class="font-size-xl text-center color-secondary border-bottom border-color-secondary">Full</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="font-style:italic">
+				<td>All Vim Manual Chunks</td>
+				<td>All Vim Manual Chunks</td>
+				<td>All Vim Manual Chunks Summarized (Read only what matter most!) &amp; CheatSheets</td>
+			</tr>
+			<tr style="font-style:italic">
+				<td>-</td>
+				<td>Practice Exercises</td>
+				<td>Practice Exercises</td>
+			</tr>
+			<tr style="font-style:italic">
+				<td>-</td>
+				<td>-</td>
+				<td>Personal configurations help desk</td>
+			</tr>
+			<tr>
+				<td>
+					<form action="/subscribe-free.html" method="get" accept-charset="utf-8">
+						<button class="button success button-border button-pill button-xs">FREE</button>
+					</form>
+				</td>
+				<td>
+					<big class="color-info">5 &euro;</big>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="BCTYRJDPBN5AS">
+						<input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal è il metodo rapido e sicuro per pagare e farsi pagare online.">
+						<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+					</form>
+
+					<p></p>
+					<em class="padding-top font-size-xs">*This fee is <b>fully refundable</b> for three days following
+						signup.</em>
+				</td>
+				<td>
+					<big class="color-secondary">9 &euro;</big>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="TJN3GVTVADWWE">
+						<input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal è il metodo rapido e sicuro per pagare e farsi pagare online.">
+						<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+					</form>
+
+
+					<p></p>
+					<em class="padding-top font-size-xs">*This fee is <b>fully refundable</b> for three days following
+						signup.</em>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 <p class="text-center">All subscription fees are a <big><u><b>one time
-      payment</b></u></big> and grant you to <big><u>lifetime content</u></big>!</p>
+			payment</b></u></big> and grant you to <big><u>lifetime content</u></big>!</p>
