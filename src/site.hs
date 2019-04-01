@@ -73,7 +73,6 @@ languageContext l = map (\ (k, v) -> constField k v)
 
 postCtx :: Context String
 postCtx =
-    titleNoDateField "titleNoDate"              `mappend`
     constField "host" rootHost                  `mappend`
     dateField "created" "%d %b %Y"              `mappend`
     modificationTimeField "modified" "%d %b %Y" `mappend`
@@ -86,7 +85,6 @@ postCtxWithLanguage l cmc = mconcat $ [
                                       , constField "cmcImgCover"    (cmcImgCover cmc)
                                       , constField "cmcDescription" (cmcDescription cmc)
                                       , constField "cmcTwitter"     (cmcTwitter cmc)
-                                      , titleNoDateField        "titleNoDateField"
                                       , dateField "created"     "%d %b %Y"
                                       , modificationTimeField   "modified" "%d %b %Y"
                                       , defaultCtxWithLanguage l
@@ -98,23 +96,11 @@ defaultCtxWithVersion v = mconcat $ v ++ [defaultContext]
 defaultCtxWithLanguage :: Language -> Context String
 defaultCtxWithLanguage l = mconcat $ languageContext l ++ [defaultContext]
 
-titleNoDateField :: String -> Context a
-titleNoDateField = mapContext removeDate . pathField
-
-indexCtx l posts = mconcat $ [ titleNoDateField "titleNoDate"
-                             , constField "lang" l
+indexCtx l posts = mconcat $ [ constField "lang" l
                              , listField "posts" postCtx (return posts)
                              , defaultCtxWithLanguage (Multilang.fromStringToLanguage l)
                              ]
 
-removeDate :: String -> String
-removeDate i = removeDate' 0 (takeBaseName i)
-  where removeDate' :: Int -> String -> String
-        removeDate' 3 s = s
-        removeDate' _ [] = ""
-        removeDate' acc (x:xs)
-          | x == '-'  = removeDate' (acc+1) xs
-          | otherwise = removeDate' acc xs
 
 -- }}}
 
