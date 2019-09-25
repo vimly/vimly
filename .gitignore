@@ -20,9 +20,12 @@ cabal.sandbox.config
 .stack-work/
 cabal.project.local
 .ghci
+*.lock
 
 # Hakyll
 
 _cache/
 _site/
 
+# Vim
+tags
