@@ -20,21 +20,19 @@ use it as well as you can read your email.
 Rights
 ------
 
-You remain anonymous.
+- You remain anonymous.
 
-You have the right to cancel you subscription at any time.
+- You have the right to cancel you subscription at any time.
 
-Your personal data, email address, will not be shared with anyone without your
-consent.
+- Your personal data, email address, will not be shared with anyone without your consent.
 
-Any new features that affect privacy will be strictly opt-in.
+- Any new features that affect privacy will be strictly opt-in.
 
-You will be treated with respect and discretion.
+- You will be treated with respect and discretion.
 
 Responsibilities
 ----------------
 
-You may not make automated requests to the site more frequently than once every
-thirty seconds.
+- You may not make automated requests to the site more frequently than once every thirty seconds.
 
-You may not use the site to harass other users.
+- You may not use the site to harass other users.

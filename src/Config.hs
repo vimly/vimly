@@ -30,7 +30,7 @@ feedConfig _ = FeedConfiguration
   { feedTitle       = "Vimly"
   , feedDescription = "Learning Sessions Available"
   , feedAuthorName  = "Giacomo Mantani"
-  , feedAuthorEmail = "vimly.info@gmail.com"
+  , feedAuthorEmail = "starly.info@gmail.com"
   , feedRoot        = "http://vimly.info"
   }
 
